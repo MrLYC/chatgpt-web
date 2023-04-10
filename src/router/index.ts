@@ -6,13 +6,13 @@ import { ChatLayout } from '@/views/chat/layout'
 
 const routes: RouteRecordRaw[] = [
   {
-    path: '/v-v',
+    path: '/',
     name: 'Root',
     component: ChatLayout,
-    redirect: '/ch-bot,
+    redirect: '/chat',
     children: [
       {
-        path: '/ch-bot/:uuid?',
+        path: '/chat/:uuid?',
         name: 'Chat',
         component: () => import('@/views/chat/index.vue'),
       },
@@ -34,7 +34,7 @@ const routes: RouteRecordRaw[] = [
   {
     path: '/:pathMatch(.*)*',
     name: 'notFound',
-    redirect: '/500',
+    redirect: '/404',
   },
 ]
 
